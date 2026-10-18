@@ -130,3 +130,56 @@ footer::before { content: "✧"; display: block; margin-bottom: 14px; color: #db
 }
 
 :root { --botanical-art: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20180%20320%22%20fill%3D%22none%22%20stroke%3D%22%23b99571%22%20stroke-width%3D%221.3%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M44%20310C90%20240%2084%20170%20133%2032M79%20230C55%20219%2032%20200%2022%20171M91%20189C123%20167%20142%20148%20155%20123M107%20132C81%20110%2073%2087%2074%2062M120%2085C148%2067%20158%2040%20159%2016%22/%3E%3Cpath%20d%3D%22M81%20250C112%20251%20132%20236%20139%20211C113%20212%2093%20223%2081%20250ZM78%20220C51%20218%2032%20204%2022%20171C50%20177%2068%20194%2078%20220ZM88%20198C63%20181%2052%20163%2055%20139C78%20151%2089%20174%2088%20198ZM94%20182C122%20178%20146%20157%20155%20123C125%20133%20104%20154%2094%20182ZM107%20137C82%20123%2070%2094%2074%2062C98%2079%20109%20108%20107%20137ZM115%20113C141%20112%20158%2093%20164%2069C140%2075%20123%2091%20115%20113ZM126%2078C147%2066%20160%2042%20159%2016C137%2030%20128%2051%20126%2078ZM133%2042C123%2028%20125%2012%20138%203C148%2020%20143%2033%20133%2042Z%22/%3E%3C/svg%3E"); }
+
+/* Wedding photographs: landscape on desktop, portrait on phones. */
+.hero {
+  background-image: url("assets/hero-desktop.jpg");
+  background-size: cover;
+  background-position: center 35%;
+  min-height: 680px;
+  height: min(76vw, 980px);
+  justify-content: flex-start;
+}
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(15,24,18,.4), transparent 40%, rgba(15,24,18,.1));
+}
+.hero-content {
+  width: calc(100% - 112px);
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 112px 0 100px;
+}
+.hero-eyebrow { font-size: 28px; margin: 0 0 10px; }
+.hero h1 { font-size: clamp(64px, 6.2vw, 94px); line-height: 1.04; }
+.hero .date { font-size: 28px; margin: 16px 0 20px; }
+.hero h1, .hero-eyebrow, .hero .date { text-shadow: 0 2px 18px rgba(0,0,0,.3); }
+@media (max-width: 760px) {
+  .hero {
+    background-image: url("assets/hero-mobile.jpg");
+    background-position: center center;
+    height: 100vh;
+    height: 100svh;
+    min-height: 640px;
+  }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(27,49,57,.3), transparent 35%, transparent 62%, rgba(20,30,22,.2));
+  }
+  .hero-content {
+    position: static;
+    width: calc(100% - 28px);
+    margin: 0 auto;
+    padding: 94px 0 0;
+    text-align: center;
+  }
+  .hero-eyebrow { font-size: 23px; margin: 0 0 12px; }
+  .hero h1 { font-size: clamp(42px, 10.7vw, 76px); line-height: 1.05; white-space: nowrap; }
+  .hero .date { font-size: 24px; margin: 14px 0 0; }
+  .hero .primary-btn {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    box-shadow: 0 8px 28px rgba(0,0,0,.12);
+  }
+}
