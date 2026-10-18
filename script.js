@@ -48,7 +48,7 @@ form.addEventListener('submit',async event=>{
     // cannot confirm that appendRow succeeded; verify the destination Sheet before launch.
     await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
     form.hidden=true;document.querySelector('.step-meta').hidden=true;
-    $('responseCopy').textContent=data.adult!=='0'?'謝謝您的回覆，期待於 2027.03.21 與您相見。':'謝謝您留下的祝福，感謝您與我們分享這份喜悅。';
+    $('responseCopy').textContent='我們期待在\n2027.03.21\n與您相見';
     $('successMessage').hidden=false;
   }catch(error){$('formError').textContent='連線中斷，無法確認是否送達。請先聯絡新人確認，避免重複填寫。';submitting=false;$('submitBtn').disabled=false;$('prevBtn').disabled=false;$('submitBtn').textContent='重新送出';}
 });setStep(1);
